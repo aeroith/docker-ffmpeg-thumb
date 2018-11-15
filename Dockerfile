@@ -11,4 +11,4 @@ WORKDIR /tmp/workdir
 
 COPY run.sh /tmp/workdir
 
-ENTRYPOINT ./copy_thumbs.sh
+ENTRYPOINT ./run.sh

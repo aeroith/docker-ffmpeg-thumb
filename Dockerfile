@@ -1,5 +1,5 @@
 FROM jrottenberg/ffmpeg
-LABEL maintainer="Rupak Ganguly <rupakg@gmail.com>"
+LABEL maintainer="Serhat Cillidag scillidag@gmail.com"
 
 RUN apt-get update && \
     apt-get install python-dev python-pip -y && \
@@ -9,6 +9,6 @@ RUN pip install awscli
 
 WORKDIR /tmp/workdir
 
-COPY copy_thumbs.sh /tmp/workdir
+COPY run.sh /tmp/workdir
 
-ENTRYPOINT ffmpeg -i ${INPUT_VIDEO_FILE_URL} -ss ${POSITION_TIME_DURATION} -vframes 1 -vcodec png -an -y ${OUTPUT_THUMBS_FILE_NAME} && ./copy_thumbs.sh
+ENTRYPOINT ./copy_thumbs.sh

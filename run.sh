@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Type is ${TYPE}"
 echo "URL is ${INPUT_VIDEO_FILE_URL}"
-if ["${TYPE}" = 'CAMERA']
+if ["${TYPE}" == 'CAMERA']
 then
   ffmpeg -i ${INPUT_VIDEO_FILE_URL} -vframes 1 -an -y ${OUTPUT_THUMBS_FILE_NAME}
 else
